@@ -1,0 +1,59 @@
+.corBG{
+    background-color: rgb(228, 233, 237);
+}
+
+.margemTopo{
+    margin-top: 15%;
+}
+
+.btnComprarMoedas{
+    color: rgb(72, 178, 235);
+    font-weight: 400;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(72, 178, 235);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    cursor: pointer;
+}
+
+.btnComprarMoedas.btnAtivo{
+    background-color: rgb(72, 178, 235);
+    color: white;
+    font-weight: 400;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(72, 178, 235);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.btnInformacoes{
+    color: rgb(72, 178, 235);
+    font-weight: 400;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(72, 178, 235);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    cursor: pointer;
+}
+
+.btnInformacoes.btnAtivo{
+    background-color: rgb(72, 178, 235);
+    color: white;
+    font-weight: 400;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(72, 178, 235);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.divInformacoes{
+    border-radius: 15px;
+    border-color: rgb(72, 178, 235);
+    border-width: 2px;
+    border-style: solid;
+    font-weight: 600;
+}

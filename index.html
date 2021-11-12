@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" name= "viewport" content= "width=device-width, initial-scale=1">
+    <title>Conversor de moedas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <script src="geral.js"></script>
+</head>
+<body class="corBG">
+	<div class="container">
+	  	<div class="row justify-content-around">
+	    	<div class="col-lg-4 margemTopo">
+				<div class="row text-center px-2">
+                    <div class="col btnComprarMoedas btnAtivo py-2" onclick="mostrarConversorMoedas();">Conversor de moedas</div>
+                    <div class="col btnInformacoes py-2" onclick="mostrarInformacoes();">Informações do projeto</div>
+                </div>
+				<div id="conversorMoedas" style="display: block;">
+					<select id="selectMoeda" class="form-select mt-3 shadow-none" aria-label="Moeda" onchange="preencherNomeMoedaInput(this);"></select>
+					<div id="divConversaoCompra" class="mt-3" style="display: none;">
+						<label for="inputMoedaConversao" style="font-weight: 600;">Valor em <span id="nomeMoedaConversao"></span></label>
+						<input type="text" class="form-control shadow-none" id="inputMoedaConversao" onkeyup="converterMoedaSelecionada();">
+						<label class="mt-3" for="inputMoedaBRL" style="font-weight: 600;">Valor em BRL</label>
+						<input type="text" class="form-control shadow-none" id="inputMoedaBRL" disabled>
+					</div>
+				</div>
+                <div id="informacoesConversor" style="display: none;">
+					<div class="text-center p-2 mt-3 divInformacoes">
+						<p>Esse é um conversor de moedas criado para fins de estudo.</p>
+						<p>O Projeto foi feito utilizando HTML5, CSS3 e JavaScript, foram utilizados os frameworks Bootstrap e JQuery, os dados das moedas são pegos da API AwesomeAPI</p>
+						<p>Projeto feito por André Carvalho</p>
+					</div>
+				</div>
+	    	</div>
+	  	</div>
+	</div>
+
+	<div id="modalCarregando" class="modal" tabindex="-1">
+	  	<div class="modal-dialog modal-fullscreen">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	        		<div class="d-flex justify-content-center position-absolute top-50 start-50 translate-middle">
+					  	<div class="spinner-border" role="status"></div>
+					  	<span style="margin-left: 1em;">Carregando, por favor, aguarde</span>
+					</div>
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>
+
+    <script>
+        preencherMoedas();
+
+		$(document).ready(function(){
+			$('#inputMoedaConversao').mask('0.000.000', {reverse: true});
+			$('#inputMoedaBRL').mask('000.000.000.000,00', {reverse: true});
+		})
+    </script>
+</body>
+</html> 
